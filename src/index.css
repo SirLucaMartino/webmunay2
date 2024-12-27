@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark-green: #165927;
+  --color-soft-green: #7A8C72;
+  --color-cream: #F2F1DF;
+  --color-orange: #F29B30;
+  --color-orange-hover: #F28A2E;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-cream font-quicksand text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-quicksand font-bold text-dark-green;
+  }
+
+  p {
+    @apply font-quicksand text-lg;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange hover:bg-orange-hover text-white font-quicksand font-semibold text-xl py-3 px-6 
+           rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1
+           transition-all duration-300 ease-in-out;
+  }
+
+  .nav-link {
+    @apply text-dark-green hover:text-orange transition-colors duration-300 
+           font-quicksand font-medium rounded-full px-4 py-2 hover:bg-cream/50;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .container-padding {
+    @apply px-6 md:px-8 lg:px-12;
+  }
+
+  .card-tropical {
+    @apply bg-white/90 backdrop-blur-sm rounded-[2rem] shadow-lg hover:shadow-xl 
+           transition-all duration-300 p-8 border border-cream/20;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
